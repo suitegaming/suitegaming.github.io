@@ -10,7 +10,7 @@ items.forEach(item => item.style.display = 'block');
 
 // Función para mover el carrusel
 const moveCarousel = direction => {
-    const itemWidth = 320, visibleWidth = reelContainer.parentElement.clientWidth, maxOffset = items.length * itemWidth - visibleWidth;
+    const itemWidth = 370, visibleWidth = reelContainer.parentElement.clientWidth, maxOffset = items.length * itemWidth - visibleWidth;
     offset = direction === 'next' ? Math.min(offset + itemWidth, maxOffset) : Math.max(offset - itemWidth, 0);
     reelContainer.style.transform = `translateX(-${offset}px)`;
 };
