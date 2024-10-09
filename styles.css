@@ -1,0 +1,122 @@
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    background: #121212; /* Un negro más suave para mayor contraste */
+    color: #E0E0E0; /* Un blanco suave para mejor legibilidad */
+    overflow-x: hidden; 
+}
+
+header, footer { 
+    background: #282828; /* Color de fondo más neutro para evitar demasiado contraste con el cuerpo */
+    color: #00E676; /* Verde suave para destacar el texto */
+    padding: 20px; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); 
+}
+
+.reels { 
+    position: relative; 
+    overflow: hidden; 
+    margin: 20px auto; 
+    padding: 20px; 
+    width: 90%; 
+    max-width: 1600px; 
+    background: #1E1E1E; /* Un gris oscuro para diferenciarse del fondo */
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); 
+}
+
+.reel__container { 
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
+}
+
+.reel__item { 
+    flex: 0 0 350px; 
+    margin-right: 20px; 
+    background: #242424; /* Color de fondo de los items un poco más claro */
+    border: 1px solid #00E676; /* Verde más claro para el borde */
+    border-radius: 10px; 
+    box-shadow: 0 6px 15px rgba(0, 230, 118, 0.3); /* Sombra suave con el verde del borde */
+    height: 600px; 
+    color: #E0E0E0; /* Blanco suave para el texto */
+    display: block; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+.reel__item img, .reel__item video, iframe { 
+    width: 100%; 
+    height: 80%; 
+    border-radius: 10px 10px 0 0; 
+    object-fit: cover; 
+    border-bottom: 1px solid #00E676; 
+}
+
+.reel__caption, .filter { 
+    padding: 15px; 
+    text-align: center; 
+    background: #1E1E1E; /* Color de fondo similar al contenedor principal */
+    border-top: 1px solid #00E676; 
+    border-radius: 0 0 10px 10px; 
+}
+
+.reel__button, .arrow, .filter { 
+    cursor: pointer; 
+    transition: background 0.3s, box-shadow 0.3s; 
+}
+
+.filter.active, .filter:hover, .reel__button:hover, .arrow:hover { 
+    background: #00C853; /* Verde más oscuro para el hover */
+    color: #121212; /* Negro más suave para el texto */
+    box-shadow: 0 6px 20px rgba(0, 200, 83, 0.5); 
+}
+
+.reel__button { 
+    display: block; 
+    margin: 10px auto; 
+    padding: 10px 20px; 
+    background: #00E676; 
+    border: none; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 15px rgba(0, 230, 118, 0.5); 
+}
+
+.arrow { 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    background: rgba(0, 230, 118, 0.8); 
+    color: #121212; 
+    border: none; 
+    padding: 10px; 
+    z-index: 10; 
+}
+
+.arrow.left { 
+    left: 0; 
+}
+
+.arrow.right { 
+    right: 0; 
+}
+
+@media only screen and (max-width: 768px) {
+    .filter {
+        display: block;
+        width: 80%;  
+        margin: 10px auto;  
+        padding: 4px 8px;  
+    }
+    
+    .filter.active {
+        display: block;
+        width: 80%;  
+        margin: 10px auto;  
+        padding: 4px 8px;  
+    }
+
+    .reel__item {
+        height: 500px;
+    }
+}
+
