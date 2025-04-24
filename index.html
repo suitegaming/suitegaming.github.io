@@ -1,71 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUITEGAMING</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>SUITEGAMING ESPINAR - Tu Lan Center en Espinar</title>
+    <meta name="description"
+        content="Las mejores promociones, torneos de CSGO, Dota, Fortnite y comunidad gamer en SUITEGAMING, tu lan center en Espinar. ¡Visítanos!">
+    <link rel="stylesheet" href="style.css">
+    <!-- Puedes añadir un icono para la pestaña del navegador (favicon) aquí -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 </head>
+
 <body>
+
     <header>
-        <h1>SUITEGAMING ESPINAR</h1>
-        <nav>
-            <span class="filter active" data-category="all">Todos</span>
-            <span class="filter" data-category="promociones">Promociones</span>
-            <span class="filter" data-category="torneos">Torneos</span>
-            <span class="filter" data-category="ubicanos">Ubícanos</span>
-            <span class="filter" data-category="otros">Otros</span>
-        </nav>
+        <div class="container">
+            <a href="#inicio" class="logo">SUITEGAMING ESPINAR</a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#promociones">Promociones</a></li>
+                    <li><a href="#torneos">Torneos</a></li>
+                    <li><a href="#comunidad">Comunidad</a></li>
+                    <li><a href="#ubicacion">Ubicación</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-button" aria-label="Toggle Menu">☰</button>
+        </div>
     </header>
 
-    <section class="reels" id="inicio">
-        <div class="reel__container">
-            <div class="reel__item" data-category="ubicanos">
-                <img src="../images/wasap.jpg" alt="Reel 1">
-                <div class="reel__caption">Únete a nuestro grupo de WhatsApp y entérate de lo más nuevo en Suitegaming</div>
-                <button class="reel__button" onclick="window.open('https://chat.whatsapp.com/FYjt2UZBY3JEk1WuKdAx2v')">Unirse Ahora</button>
+    <main>
+        <!-- Sección Inicio (Hero) -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>Bienvenido a SUITEGAMING ESPINAR</h1>
+                <p>Tu espacio para jugar, competir y conectar en Espinar.</p>
+                <a href="#promociones" class="btn btn-primary">Ver Promociones</a>
             </div>
-            <div class="reel__item" data-category="promociones">
-                <img src="../images/recarga.png" alt="Reel 2">
-                <div class="reel__caption">PROMOCION: Todas tus recargas de más de 20 soles tienen un 20% adicional.</div>
+        </section>
+
+        <!-- Sección Promociones -->
+        <section id="promociones" class="section-padding">
+            <div class="container">
+                <h2>Promociones Vigentes</h2>
+                <div class="grid-container">
+
+                    <article class="card">
+                        <img src="images/promo-recarga.jpg" alt="Promo Super Recargas" class="card-img">
+                        <!-- Reemplaza con tu imagen -->
+                        <h3>¡Super Recargas!</h3>
+                        <p>¡Maximiza tu saldo! Recarga S/ 10 y recibe S/ 12. Recarga S/ 20 y juega con S/ 26.</p>
+                        <p class="card-condition">¡Más tiempo para jugar!</p>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/promo-tardes.jpg" alt="Promo Clientes Nuevos" class="card-img">
+                        <!-- Reemplaza con tu imagen -->
+                        <h3>Nuevos Usuarios</h3>
+                        <p>Crea tu cuenta en suitegaming espinar y recibe 2 horas gratis de juego</p>
+                        <p class="card-price">!2 Horas Gratis!</p>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/promo-fds.jpg" alt="Promo Mañanera" class="card-img">
+                        <!-- Reemplaza con tu imagen -->
+                        <h3>Promo Mañanera</h3>
+                        <p>¡Aprovecha 3 horas continuas de juego por solo 3 soles. Hasta las 12M</p>
+                        <p class="card-price">S/ 3.00</p>
+                    </article>
+
+
+                </div>
             </div>
-            <div class="reel__item" data-category="otros">
-                <img src="../images/qr.jpg" alt="Reel 2">
-                <div class="reel__caption">Escanea el QR y disfruta de WIFI GRATIS dentro de suitegaming.</div>       
+        </section>
+
+        <!-- Sección Torneos -->
+        <section id="torneos" class="section-padding dark-section">
+            <div class="container">
+                <h2>Torneos Vigentes</h2>
+                <div class="grid-container">
+                    <!-- Torneo CSGO -->
+                    <article class="card">
+                        <img src="images/torneo-csgo.jpg" alt="Torneo CSGO" class="card-img">
+                        <!-- Reemplaza con tu imagen -->
+                        <h3>Torneo Dota2 Espinar</h3>
+                        <p>Primera Clasificatoria Torneo Dota2 Espinar "Mi Carry es un Heraldo"</p>
+                        <p><strong>Fecha:</strong> Viernes 2 de mayo 10PM</p>
+                        <a href="https://forms.gle/Fapgi2o7iyZu2eB77"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Detalles /
+                            Inscribirse</a>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/torneo-csgo.jpg" alt="Torneo CSGO" class="card-img">
+                        <!-- Reemplaza con tu imagen -->
+                        <h3>Torneo Dota2 Espinar</h3>
+                        <p>Segunda Clasificatoria Torneo Dota2 Espinar "Mi Carry es un Heraldo"</p>
+                        <p><strong>Fecha:</strong> Viernes 9 de mayo 10PM</p>
+                        <a href="https://forms.gle/Fapgi2o7iyZu2eB77"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Detalles /
+                            Inscribirse</a>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/torneo-csgo.jpg" alt="Torneo CSGO" class="card-img">
+                        <!-- Reemplaza con tu imagen -->
+                        <h3>Torneo Dota2 Espinar</h3>
+                        <p>Gran Final Torneo Dota2 Espinar "Mi Carry es un Heraldo"</p>
+                        <p><strong>Fecha:</strong> Viernes 16 de mayo 10PM</p>
+                        <a href="https://forms.gle/Fapgi2o7iyZu2eB77"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Detalles /
+                            Inscribirse</a>
+                    </article>
+
+                    
+                </div>
             </div>
-            <div class="reel__item" data-category="torneos">
-                <iframe src="https://www.youtube.com/embed/bq4USwvqqFc?start=14" allowfullscreen></iframe>
-                <div class="reel__caption">Final del Torneo de Inmortales en Suitegaming</div>
+        </section>
+
+        <!-- Sección Comunidad (WhatsApp) -->
+        <section id="comunidad" class="section-padding">
+            <div class="container text-center">
+                <h2>Únete a Nuestra Comunidad</h2>
+                <p>Conéctate con otros gamers, entérate de novedades y arma tus equipos en nuestro grupo oficial.</p>
+                <div class="whatsapp-links">
+                    <a href="https://chat.whatsapp.com/FYjt2UZBY3JEk1WuKdAx2v" target="_blank" class="btn btn-whatsapp">
+                        <img src="images/whatsapp-icon.png" alt="WhatsApp" width="20" height="20"> Grupo Oficial
+                        SUITEGAMING ESPINAR
+                    </a>
+                </div>
             </div>
-            <div class="reel__item" data-category="torneos">
-                <img src="../images/ganad.png" alt="Reel 2">
-                <div class="reel__caption">Ganadores de los diferentes torneos realizados en SUITEGAMING, Categorías Yatoro e Inmortals.</div>
+        </section>
+
+        <!-- Sección Ubicación -->
+        <section id="ubicacion" class="section-padding dark-section">
+            <div class="container">
+                <h2>Encuéntranos</h2>
+                <div class="location-content">
+                    <div class="map-container">
+                        <!-- Código de inserción de Google Maps -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15430.904694849214!2d-71.41805060377798!3d-14.784447598359023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916911ce9092b93d%3A0xe1f7c27ba9f9135b!2sSuite%20Gaming%20Espinar!5e0!3m2!1ses!2spe!4v1745454763553!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="address-info">
+                        <h3>Dirección</h3>
+                        <p>Calle Pumacahua 212 - Espinar, a Espaldas de la plazoleta, Frente a polleria secretos</p>
+                        <h3>Horario de Atención</h3>
+                        <p>Lunes a Domingo: 8:00 AM - 11:00 PM</p>
+                        <!-- <h3>Contacto</h3> -->
+                        <!-- <p>Teléfono: +51 987 654 321</p> -->
+                        <!-- <p>Email: contacto@suitegamingaqp.com</p> -->
+                    </div>
+                </div>
             </div>
-            <div class="reel__item" data-category="ubicanos">
-                <img src="../images/macbook.png" alt="Reel 2">
-                <div class="reel__caption">Estamos ubicados en la Av. Tintaya 215, frente a Shalom y Panadería Tintaya.</div>
-                <button class="reel__button" onclick="window.open('https://maps.app.goo.gl/JGHFVWJ1i56WwFPB9')">Ir a Suitegaming</button>
-            </div>
-            <div class="reel__item" data-category="otros">
-                <iframe src="https://www.youtube.com/embed/IGfGXp8yxi8" allowfullscreen></iframe>
-                <div class="reel__caption">Sube tu medalla gracias al bajo packet loss en Suitegaming</div>
-            </div>
-            <div class="reel__item" data-category="ubicanos">
-                <img src="../images/faceb.jpg" alt="Reel 2">
-                <div class="reel__caption">Visita nuestro Facebook y entérate de lo más nuevo en Suitegaming</div>
-                <button class="reel__button" onclick="window.open('https://www.facebook.com/suitegaming')">Visitar Facebook</button>
-            </div>
-        </div>
-        <button class="arrow left" id="prev">←</button>
-        <button class="arrow right" id="next">→</button>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <h3>SUITEGAMING</h3>
-        <p>Un ambiente divertido para disfrutar de tus juegos favoritos con buenos equipos.</p>
-        <p>Derechos reservados &copy; 2024 SUITEGAMING</p>
+        <div class="container">
+            <p>© 2025 SUITEGAMINGAQP. Todos los derechos reservados.</p> <!-- Año actualizado -->
+            <!-- Puedes añadir enlaces a redes sociales aquí -->
+            <!-- <div class="social-links">
+                <a href="#">Facebook</a> | <a href="#">Instagram</a>
+            </div> -->
+        </div>
     </footer>
+
+    <!-- El código del modal ha sido eliminado -->
 
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,43 +1,70 @@
-const filterButtons = document.querySelectorAll('.filter');
-const items = document.querySelectorAll('.reel__item');
-const reelContainer = document.querySelector('.reel__container');
-const nextButton = document.getElementById('next');
-const prevButton = document.getElementById('prev');
-let offset = 0, autoSlideInterval, isManualControl = false;
+document.addEventListener('DOMContentLoaded', function() {
 
-// Mostrar todos los elementos inicialmente
-items.forEach(item => item.style.display = 'block');
+    // --- Menú Móvil ---
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mainNav = document.getElementById('main-nav');
 
-// Función para mover el carrusel
-const moveCarousel = direction => {
-    const itemWidth = 370, visibleWidth = reelContainer.parentElement.clientWidth, maxOffset = items.length * itemWidth - visibleWidth;
-    offset = direction === 'next' ? Math.min(offset + itemWidth, maxOffset) : Math.max(offset - itemWidth, 0);
-    reelContainer.style.transform = `translateX(-${offset}px)`;
-};
+    if (mobileMenuButton && mainNav) {
+        mobileMenuButton.addEventListener('click', () => {
+            mainNav.classList.toggle('active'); // Añade o quita la clase 'active' para mostrar/ocultar
+        });
 
-// Botones de navegación
-nextButton.addEventListener('click', () => { moveCarousel('next'); isManualControl = true; });
-prevButton.addEventListener('click', () => { moveCarousel('prev'); isManualControl = true; });
+        // Opcional: Cerrar menú al hacer clic en un enlace
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Solo cierra si el menú está activo (visible en móvil)
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+    } else {
+        console.warn("Elementos del menú móvil no encontrados.");
+    }
 
-// Función para filtrar elementos
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        const category = button.getAttribute('data-category');
-        items.forEach(item => item.style.display = (category === 'all' || item.getAttribute('data-category') === category) ? 'block' : 'none');
-        offset = 0; reelContainer.style.transform = 'translateX(0px)';
-    });
-});
+    // --- Opcional: Resaltar enlace de navegación activo según la sección visible ---
+    const sections = document.querySelectorAll('main section[id]');
+    const navLiAnchors = document.querySelectorAll('#main-nav ul li a'); // Selecciona los <a> dentro de <li>
 
-// Función para desplazamiento automático del carrusel
-const startAutoSlide = () => autoSlideInterval = setInterval(() => { if (!isManualControl) moveCarousel('next'); }, 3000);
-startAutoSlide();
+    if (sections.length > 0 && navLiAnchors.length > 0) {
+        window.addEventListener('scroll', () => {
+            let currentSectionId = '';
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            const activationOffset = 100; // Ajusta este valor si es necesario
 
-// Detener el carrusel cuando se selecciona una tarjeta o botón
-items.forEach(item => item.addEventListener('click', () => { clearInterval(autoSlideInterval); isManualControl = true; }));
+            sections.forEach( section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollPosition >= (sectionTop - activationOffset) && scrollPosition < (sectionTop + sectionHeight - activationOffset)) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
 
-// Reiniciar desplazamiento automático cuando no se interactúa manualmente
-setTimeout(() => { isManualControl = false; startAutoSlide(); }, 5000);
+            if (scrollPosition < sections[0].offsetTop - activationOffset) {
+                currentSectionId = sections[0].getAttribute('id');
+            }
+            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50) {
+                currentSectionId = sections[sections.length - 1].getAttribute('id');
+            }
 
+            navLiAnchors.forEach( a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + currentSectionId) {
+                    a.classList.add('active');
+                }
+            });
 
+            if (!currentSectionId && scrollPosition < 200) {
+                const homeLink = document.querySelector('#main-nav a[href="#inicio"]');
+                if (homeLink) homeLink.classList.add('active');
+            }
+        });
+        window.dispatchEvent(new Event('scroll')); // Llama una vez al cargar
+    } else {
+         console.warn("Secciones o enlaces de navegación no encontrados para la funcionalidad de resaltado.");
+    }
+
+    // --- El código de la funcionalidad del Modal de Imagen ha sido eliminado ---
+
+}); // Fin del DOMContentLoaded

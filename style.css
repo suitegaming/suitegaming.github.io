@@ -1,0 +1,433 @@
+/* --- Variables de Color y Fuentes --- */
+:root {
+    --color-primary: #FFA500;
+    /* Naranja Principal */
+    --color-secondary: #F5651D;
+    /* Un naranja más intenso para acentos */
+    --color-dark: #1a1a1a;
+    /* Negro/Gris muy oscuro */
+    --color-medium-gray: #333333;
+    --color-light-gray: #f4f4f4;
+    --color-white: #ffffff;
+    --color-whatsapp: #25D366;
+
+    --font-primary: 'Arial', sans-serif;
+    /* Cambia a una fuente más gamer si prefieres */
+    --font-headings: 'Impact', 'Arial Black', sans-serif;
+    /* Fuente más gruesa para títulos */
+}
+
+/* --- Reset Básico y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Desplazamiento suave al hacer clic en enlaces internos */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-light-gray);
+    /* Texto claro por defecto sobre fondos oscuros */
+    background-color: var(--color-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-headings);
+    color: var(--color-primary);
+    /* Títulos en naranja */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    /* Subtítulos en blanco dentro de tarjetas */
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.dark-section {
+    background-color: var(--color-medium-gray);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Botones --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+}
+
+.btn-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+    margin: 10px;
+    display: inline-flex;
+    /* Alinea el icono y texto */
+    align-items: center;
+    gap: 8px;
+    /* Espacio entre icono y texto */
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    /* WhatsApp más oscuro en hover */
+    color: var(--color-white);
+    transform: scale(1.05);
+}
+
+
+/* --- Header y Navegación --- */
+header {
+    background-color: var(--color-dark);
+    padding: 1rem 0;
+    position: sticky;
+    /* Fija el header al hacer scroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    font-family: var(--font-headings);
+}
+
+.logo:hover {
+    color: var(--color-secondary);
+}
+
+#main-nav ul {
+    display: flex;
+}
+
+#main-nav li {
+    margin-left: 20px;
+}
+
+#main-nav a {
+    color: var(--color-light-gray);
+    padding: 5px 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+#main-nav a:hover,
+#main-nav a.active {
+    /* Clase 'active' podría añadirse con JS */
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* Botón Menú Móvil */
+#mobile-menu-button {
+    display: none;
+    /* Oculto por defecto en pantallas grandes */
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/fondo-inicio.jpg') no-repeat center center/cover; /* Asegúrate que la imagen exista */
+    color: var(--color-white);
+    height: 70vh;
+    /* Altura del viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+    /* Título principal en blanco para contraste */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Grid y Tarjetas (Promociones, Torneos) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsive Grid */
+    gap: 25px;
+    /* Espacio entre tarjetas */
+}
+
+.card {
+    background-color: var(--color-medium-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Para que la imagen no se salga del radio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    /* Espacio interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    /* Altura fija para la imagen */
+    object-fit: cover;
+    /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    /* Bordes redondeados también para la imagen */
+    /* Ya no hay estilos :hover o cursor: pointer específicos del modal aquí */
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+    /* Títulos de tarjeta en naranja */
+}
+
+.card p {
+    color: var(--color-light-gray);
+    flex-grow: 1;
+    /* Empuja el botón/precio hacia abajo */
+    margin-bottom: 1rem;
+}
+
+.card .btn,
+.card .card-price,
+.card .card-condition {
+    margin-top: auto;
+    /* Alinea botón/precio al final */
+}
+
+.card-price,
+.card-condition {
+    font-weight: bold;
+    color: var(--color-white);
+    font-size: 1.1rem;
+}
+
+
+/* --- Sección Comunidad (WhatsApp) --- */
+.whatsapp-links {
+    margin-top: 2rem;
+}
+
+.whatsapp-links a img {
+    display: inline-block;
+    /* Asegura que esté en línea con el texto */
+    vertical-align: middle;
+    /* Alinea verticalmente con el texto */
+    margin-right: 8px;
+    /* Espacio entre icono y texto */
+}
+
+/* --- Sección Ubicación --- */
+.location-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Mapa más grande que la info */
+    gap: 30px;
+    align-items: center;
+}
+
+.map-container {
+    border: 3px solid var(--color-primary);
+    border-radius: 5px;
+    overflow: hidden;
+    /* Para que el iframe no rompa el borde */
+}
+
+.map-container iframe {
+    display: block;
+    /* Evita espacios extra debajo del iframe */
+}
+
+.address-info h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-light-gray);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 40px;
+    /* Separación del último contenido */
+    border-top: 3px solid var(--color-primary);
+}
+
+
+/* ======================== */
+/* === RESPONSIVIDAD === */
+/* ======================== */
+
+@media (max-width: 768px) {
+    /* --- Ajustes Generales Responsive --- */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .hero h1 { font-size: 2.8rem; }
+
+    /* --- Menú Móvil --- */
+    #main-nav {
+        display: none; /* Oculta el menú normal */
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: var(--color-dark);
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        z-index: 1500; /* Suficiente para estar sobre el contenido */
+    }
+
+    #main-nav.active { /* Clase que se añade con JS */
+        display: flex;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #main-nav li {
+        margin: 0;
+        border-top: 1px solid var(--color-medium-gray);
+    }
+
+    #main-nav a {
+        display: block;
+        padding: 15px;
+        border-bottom: none;
+    }
+    #main-nav a:hover,
+    #main-nav a.active {
+         background-color: var(--color-medium-gray);
+         color: var(--color-primary);
+         border-bottom: none;
+    }
+
+    #mobile-menu-button {
+        display: block; /* Muestra el botón hamburguesa */
+    }
+
+    /* --- Ajuste de columnas --- */
+    .location-content {
+        grid-template-columns: 1fr; /* Apila mapa e info */
+    }
+
+    .map-container {
+        margin-bottom: 20px;
+    }
+
+} /* Fin de @media (max-width: 768px) */
+
+
+/* Ya no hay ajustes específicos para el modal en pantallas pequeñas */
+/* @media (max-width: 700px) { ... } */
